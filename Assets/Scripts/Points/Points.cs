@@ -17,4 +17,6 @@ public class Points : MonoBehaviour
         controller.Score += 10;
         controller.scoreText.text = controller.Score.ToString();
     }
+
+    
 }

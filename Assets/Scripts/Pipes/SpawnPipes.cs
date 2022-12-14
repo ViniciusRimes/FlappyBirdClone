@@ -6,7 +6,6 @@ public class SpawnPipes : MonoBehaviour
 {
     [SerializeField] private GameObject pipe; //cano
     [SerializeField] private float heigth; //altura do cano
-    [SerializeField] private float maxTime; //tempo entre os canos
     private float currentTime = 0;
     
 
