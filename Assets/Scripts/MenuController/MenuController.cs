@@ -40,4 +40,8 @@ public class MenuController : MonoBehaviour
         mainMenu.SetActive(true);
     }
 
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }

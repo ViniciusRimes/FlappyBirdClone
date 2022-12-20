@@ -7,6 +7,7 @@ public class Points : MonoBehaviour
     public GameController controller;
     
     
+    
     void Start()
     {
         controller = FindObjectOfType<GameController>();
@@ -14,9 +15,10 @@ public class Points : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D collision)
     {
+        
         controller.Score += 10;
         controller.scoreText.text = controller.Score.ToString();
     }
-
+    
     
 }
