@@ -12,12 +12,22 @@ public class Points : MonoBehaviour
     {
         controller = FindObjectOfType<GameController>();
     }
-    
+    void Update()
+    {
+        controller.TextBestScore.text = controller.totalBestScore.ToString();
+    }
     void OnTriggerEnter2D(Collider2D collision)
     {
         
-        controller.Score += 10;
-        controller.scoreText.text = controller.Score.ToString();
+        controller.score += 10;
+        controller.scoreText.text = controller.score.ToString();
+        controller.scoreTextMedal.text = controller.score.ToString();
+
+        if(controller.score >= controller.totalBestScore)
+        {
+            controller.bestScore = controller.score;
+            PlayerPrefs.SetInt("bestScore", controller.bestScore);
+        }
     }
     
     

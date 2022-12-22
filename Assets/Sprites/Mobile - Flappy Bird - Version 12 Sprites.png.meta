@@ -101,6 +101,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -1763,6 +1775,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Mobile - Flappy Bird - Version 12 Sprites_79
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 232
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40b615caf3644984a878187d3fdb43da
+      internalID: 1395068082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Flappy Bird - Version 12 Sprites_80
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 208
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdee0261689a22c4c90026656174c694
+      internalID: 969441043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1814,6 +1868,7 @@ TextureImporter:
       Mobile - Flappy Bird - Version 12 Sprites_26: 1914205903
       Mobile - Flappy Bird - Version 12 Sprites_46: 8681450
       Mobile - Flappy Bird - Version 12 Sprites_77: -1775116262
+      Mobile - Flappy Bird - Version 12 Sprites_80: 969441043
       Mobile - Flappy Bird - Version 12 Sprites_41: 1490310202
       Mobile - Flappy Bird - Version 12 Sprites_34: 1130724775
       Mobile - Flappy Bird - Version 12 Sprites_32: -185308130
@@ -1830,6 +1885,7 @@ TextureImporter:
       Mobile - Flappy Bird - Version 12 Sprites_20: 1554906784
       Mobile - Flappy Bird - Version 12 Sprites_33: 1407884044
       Mobile - Flappy Bird - Version 12 Sprites_2: -1784267366
+      Mobile - Flappy Bird - Version 12 Sprites_79: 1395068082
       Mobile - Flappy Bird - Version 12 Sprites_65: 1446762571
       Mobile - Flappy Bird - Version 12 Sprites_18: 25686067
       Mobile - Flappy Bird - Version 12 Sprites_11: 758562807
