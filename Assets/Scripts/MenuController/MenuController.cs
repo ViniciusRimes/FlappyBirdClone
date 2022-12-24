@@ -8,6 +8,7 @@ public class MenuController : MonoBehaviour
 
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject option;
+    [SerializeField] private GameObject explication;
 
    
 
@@ -25,7 +26,7 @@ public class MenuController : MonoBehaviour
 
     public void NewGame()
     {
-        SceneManager.LoadScene("JogoPrincipal");
+        explication.SetActive(true);
     }
 
     public void Options()
@@ -43,5 +44,11 @@ public class MenuController : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public void Explication()
+    {
+        explication.SetActive(false);
+        SceneManager.LoadScene("JogoPrincipal");
     }
 }

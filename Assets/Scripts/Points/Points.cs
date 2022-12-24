@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Points : MonoBehaviour
 {
-    public GameController controller;
-    
-    
+    private GameController controller;
     
     void Start()
     {
         controller = FindObjectOfType<GameController>();
+        
     }
     void Update()
     {
@@ -18,7 +17,6 @@ public class Points : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        
         controller.score += 10;
         controller.scoreText.text = controller.score.ToString();
         controller.scoreTextMedal.text = controller.score.ToString();
