@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-
+    [Header("Menu")]
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject option;
     [SerializeField] private GameObject explication;
 
-   
+    public bool Music;
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,34 +22,36 @@ public class MenuController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+    
     }
 
-    public void NewGame()
+    void NewGame()
     {
         explication.SetActive(true);
     }
 
-    public void Options()
+    void Options()
     {
         option.SetActive(true);
         mainMenu.SetActive(false);
     }
 
-    public void BackMenu()
+    void BackMenu()
     {
         option.SetActive(false);
         mainMenu.SetActive(true);
     }
 
-    public void ExitGame()
+    void ExitGame()
     {
         Application.Quit();
     }
 
-    public void Explication()
+    void Explication()
     {
         explication.SetActive(false);
+        mainMenu.SetActive(false);
         SceneManager.LoadScene("JogoPrincipal");
     }
+    
 }

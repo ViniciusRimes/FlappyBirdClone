@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    private Player player;
+    [Header("GameOver")]
     [SerializeField] private GameObject GameOverPanel;
     [SerializeField] private GameObject Score;
     [SerializeField] private GameObject options;
@@ -16,7 +16,19 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject medalBronze;
     [SerializeField] private GameObject medalGold;
     [SerializeField] private GameObject medalSilver;
-
+    
+    [Header("GetReady")]
+    [SerializeField] private GameObject number1;
+    [SerializeField] private GameObject number2;
+    [SerializeField] private GameObject number3;
+    [SerializeField] private GameObject getReady;
+    private bool _gameInitial;
+    [HideInInspector]public bool gameInitial{get{return _gameInitial;} set{_gameInitial = value;}}
+    
+    [Header("Components")]
+    [SerializeField] private Player player;
+    [SerializeField] private AudioSource audioSource;
+    public float currentTime = 0;
 
 
     [Header("Score")]
@@ -27,20 +39,22 @@ public class GameController : MonoBehaviour
     public Text scoreText;
     public Text scoreTextMedal;
     public Text TextBestScore;
-
-
-
+    
     void Start()
     {
         Time.timeScale = 1;
-        player = FindObjectOfType<Player>();
+        _gameInitial = false;
+        player.GetComponent<Rigidbody2D>().gravityScale = 0f;
     }
 
     void Update()
     {   
+
+        currentTime += Time.deltaTime;
         GameOver();
         totalBestScore = PlayerPrefs.GetInt("bestScore");
         Medals();
+        GetReady();
     }
 
     void GameOver()
@@ -92,7 +106,6 @@ public class GameController : MonoBehaviour
         {
             medalBronze.SetActive(false);
             medalSilver.SetActive(true);
-            
         }
         if(score > 150)
         {
@@ -100,5 +113,35 @@ public class GameController : MonoBehaviour
             medalGold.SetActive(true);
         }
     }
+
+    void GetReady()
+    {
+        if(currentTime > 0f && currentTime <= 1f)
+        {
+            number3.SetActive(true);
+        }
+        if(currentTime > 1f && currentTime <= 2f)
+        {
+            number3.SetActive(false);
+            number2.SetActive(true);
+        }
+        if(currentTime > 2f && currentTime <= 3f)
+        {
+            number2.SetActive(false);
+            number1.SetActive(true);
+        }
+        if(currentTime > 3f && currentTime <= 4f)
+        {
+            number1.SetActive(false);
+            getReady.SetActive(true);
+        }
+        if(currentTime > 4f)
+        {
+            getReady.SetActive(false);
+             _gameInitial = true;
+            player.GetComponent<Rigidbody2D>().gravityScale = 0.7f;
+        }
+    }
+
 
 }

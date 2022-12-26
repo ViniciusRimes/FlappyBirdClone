@@ -5,10 +5,15 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    [Header("Components")]
     private Rigidbody2D rig;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] AudioClip clipDead;
+    [SerializeField] private GameController gameController;
 
+    [Header("Informations")]
     [HideInInspector] public bool gameOver;
+    [SerializeField] private float speed;
 
     
     void Awake()
@@ -25,7 +30,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && gameController.gameInitial)
         {
             rig.velocity = Vector2.up * speed ;
         }
@@ -33,7 +38,12 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        audioSFX(clipDead);
+        gameOver = true;
+    }
 
-       gameOver = true;
+    void audioSFX(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
     }
 }
