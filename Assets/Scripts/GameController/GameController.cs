@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject GameOverPanel;
     [SerializeField] private GameObject Score;
     [SerializeField] private GameObject options;
+
     
     [Header("Medals")]
     [SerializeField] private GameObject medalZero;
@@ -81,8 +82,11 @@ public class GameController : MonoBehaviour
 
     void PauseGame()
     {
-        options.SetActive(true);
-        Time.timeScale = 0;
+        if(_gameInitial)
+        {
+            options.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 
     void BackGame()

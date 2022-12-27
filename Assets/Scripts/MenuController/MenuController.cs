@@ -50,7 +50,6 @@ public class MenuController : MonoBehaviour
     void Explication()
     {
         explication.SetActive(false);
-        mainMenu.SetActive(false);
         SceneManager.LoadScene("JogoPrincipal");
     }
     
