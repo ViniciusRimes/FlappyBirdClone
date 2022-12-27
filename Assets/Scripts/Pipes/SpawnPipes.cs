@@ -16,7 +16,7 @@ public class SpawnPipes : MonoBehaviour
         {
             GameObject newPipe = Instantiate(pipe);
             newPipe.transform.position = transform.position + new Vector3(0f,heigth , 0f);
-            Destroy(newPipe, 7f);
+            Destroy(newPipe, 10f);
         }
     }
 
@@ -28,7 +28,7 @@ public class SpawnPipes : MonoBehaviour
         {
             GameObject newPipe = Instantiate(pipe);
             newPipe.transform.position = transform.position + new Vector3(0f, Random.Range(-heigth, heigth), 0f);
-            Destroy(newPipe, 6f);
+            Destroy(newPipe, 10f);
             currentTime = 0f;
         }
 

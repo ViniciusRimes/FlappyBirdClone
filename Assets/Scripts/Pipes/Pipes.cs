@@ -9,7 +9,7 @@ public class Pipes : MonoBehaviour
 
     void Start()
     {
-        speed = 2;
+        speed = 1.8f;
     }
     // Update is called once per frame
     void Update()
