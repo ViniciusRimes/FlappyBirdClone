@@ -10,6 +10,8 @@ public class MenuController : MonoBehaviour
     [SerializeField] private GameObject option;
     [SerializeField] private GameObject explication;
 
+    [SerializeField]private GameController controller;
+
     public bool Music;
 
 

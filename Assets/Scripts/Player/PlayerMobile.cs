@@ -30,6 +30,7 @@ public class PlayerMobile : MonoBehaviour
         if(Input.touchCount > 0)
         {
             touch = Input.GetTouch(0);
+
             rig.velocity = Vector2.up * speed ;
         }
     }

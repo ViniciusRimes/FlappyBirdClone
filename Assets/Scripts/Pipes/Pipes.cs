@@ -6,6 +6,11 @@ public class Pipes : MonoBehaviour
 {
     [SerializeField] private float speed;
 
+
+    void Start()
+    {
+        speed = 2;
+    }
     // Update is called once per frame
     void Update()
     {

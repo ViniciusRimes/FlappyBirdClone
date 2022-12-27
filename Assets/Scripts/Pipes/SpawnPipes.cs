@@ -15,8 +15,8 @@ public class SpawnPipes : MonoBehaviour
         if(gameController.gameInitial)
         {
             GameObject newPipe = Instantiate(pipe);
-            newPipe.transform.position = transform.position + new Vector3(0f, 0f, 0f);
-            Destroy(newPipe, 10f);
+            newPipe.transform.position = transform.position + new Vector3(0f,heigth , 0f);
+            Destroy(newPipe, 7f);
         }
     }
 
@@ -24,7 +24,7 @@ public class SpawnPipes : MonoBehaviour
     void Update()
     {
 
-        if(currentTime > Random.Range(2f, 5f) && gameController.gameInitial)
+        if(currentTime > Random.Range(2f, 3.5f) && gameController.gameInitial)
         {
             GameObject newPipe = Instantiate(pipe);
             newPipe.transform.position = transform.position + new Vector3(0f, Random.Range(-heigth, heigth), 0f);

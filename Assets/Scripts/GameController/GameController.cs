@@ -23,14 +23,16 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject number2;
     [SerializeField] private GameObject number3;
     [SerializeField] private GameObject getReady;
+    [SerializeField] private GameObject howToPlay;
+    
     private bool _gameInitial;
     [HideInInspector]public bool gameInitial{get{return _gameInitial;} set{_gameInitial = value;}}
     
     [Header("Components")]
     [SerializeField] private Player player;
-    [SerializeField] private AudioSource audioSource;
-    public float currentTime = 0;
+    [SerializeField] private SpriteRenderer playerSprite;
 
+    public float currentTime = 0;
 
     [Header("Score")]
     public int score;
@@ -43,6 +45,7 @@ public class GameController : MonoBehaviour
     
     void Start()
     {
+        howToPlay.SetActive(true);
         Time.timeScale = 1;
         _gameInitial = false;
         player.GetComponent<Rigidbody2D>().gravityScale = 0f;
@@ -50,7 +53,6 @@ public class GameController : MonoBehaviour
 
     void Update()
     {   
-
         currentTime += Time.deltaTime;
         GameOver();
         totalBestScore = PlayerPrefs.GetInt("bestScore");
@@ -60,10 +62,11 @@ public class GameController : MonoBehaviour
 
     void GameOver()
     {
+      
         totalBestScore = PlayerPrefs.GetInt("bestScore");
         if(player.gameOver)
         {
-            GameOverPanel.SetActive(true);
+            GameOverPanel. SetActive(true);
             Score.SetActive(false);
             Time.timeScale = 0;
         }
@@ -144,6 +147,7 @@ public class GameController : MonoBehaviour
             getReady.SetActive(false);
              _gameInitial = true;
             player.GetComponent<Rigidbody2D>().gravityScale = 0.7f;
+            howToPlay.SetActive(false);
         }
     }
 
